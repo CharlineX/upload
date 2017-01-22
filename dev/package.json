@@ -2,7 +2,7 @@
   "name": "house",
   "version": "1.0.0",
   "description": "house",
-  "author": "BrickCarvingArtist",
+  "author": "",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

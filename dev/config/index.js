@@ -4,11 +4,11 @@ var path = require('path')
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname, '../dist/index.html'),
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
+    index: path.resolve(__dirname, '../../pages/index.html'),
+    assetsRoot: path.resolve(__dirname, '../../static/'),
+    assetsSubDirectory: '',
     assetsPublicPath: '/',
-    productionSourceMap: true,
+    productionSourceMap: 0,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
@@ -23,11 +23,12 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
         "/api/": {
-            target: "http://127.0.0.1:23333",
-            changeOrigin: true
+            target: "http://127.0.0.1:16109",
+            changeOrigin: true,
+            cookieDomainRewrite: "http://127.0.0.1:8888"
         },
         "/images/": {
-            target: "http://127.0.0.1:23333",
+            target: "http://127.0.0.1:16109",
             changeOrigin: true
         }
     },

@@ -87,7 +87,7 @@ $lightOrange = #e63700 + 50
     	<search />
     	<!-- <list :data="data"/> -->
     	<div>
-    		<div class="ul1">
+    		<!-- <div class="ul1">
 	    		<ro  uter-link v-for="(item,$index) of settings" :to="item.href">
 	    			<span v-if="$index !==4">{{item.name}}</span>
 					<svg v-if="$index !==4" class="icon" aria-hidden="true">
@@ -98,7 +98,7 @@ $lightOrange = #e63700 + 50
 							<use :xlink:href="`#icon-${item.icon}`"></use>
 						</svg>
 					</div>
-				</router-link>
+				</router-link> -->
 			</div>
     		<ul class="ul2" >
     			<li v-for="item of info">
@@ -157,7 +157,7 @@ export default {
 		],
 		info:[
 			{
-				url:require("../assets/main01.png"),
+			
 				href:"/area",
 				head:"东方金融中心",
 				title:"浦东-八百伴",
@@ -166,7 +166,7 @@ export default {
 				day:1
 			},
 			{
-				url:require("../assets/1.png"),
+				
 				href:"/area",
 				head:"华纳金融",
 				title:"杭州",
@@ -176,10 +176,10 @@ export default {
 			}
 		]
     }
-  },
-  async beforeCreate(){
-  	this.data=(await(await fetch("/api/house/get").json())).data;
   }
+  // async beforeCreate(){
+  // 	this.data=(await(await fetch("/api/house/get").json())).data;
+  // }
 }
 </script>
 

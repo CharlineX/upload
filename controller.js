@@ -1,5 +1,9 @@
 import {Router} from "express";
+import {resolve} from "path";
+import {urlencoded} from "body-parser";
+import multer from "multer";
 import {SERVER_CONFIG} from "./config";
+import readFileAsnyc from "./utils";
 const {
 	host,
 	port
@@ -49,23 +53,8 @@ router
 		});
 	});
 router
-	.route("/api/house/get")
-	.get((req,res)=>{
-		res.json({
-			code:0,
-			data:[
-				{
-					
-				},
-				{
-					
-				}
-			]
-		})
-	});
-router
 	.route("*")
 	.get(async (req,res)=>{
-		res.end(await readFileAsnyc(""))
+		res.send(await readFileAsnyc("./pages/index.html"))
 	})
 export default router;
